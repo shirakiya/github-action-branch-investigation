@@ -1,0 +1,14 @@
+name: GitHub Action Envs
+
+on: push
+
+jobs:
+  github_action_config:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo $GITHUB_CONTEXT
+      - name: Dump environments
+        run: env | sort
