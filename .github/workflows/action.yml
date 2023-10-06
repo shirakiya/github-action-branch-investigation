@@ -12,3 +12,10 @@ jobs:
         run: echo $GITHUB_CONTEXT
       - name: Dump environments
         run: env | sort
+
+  second_action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: sleep
+        run: sleep 5
+      - run: echo "finish"
